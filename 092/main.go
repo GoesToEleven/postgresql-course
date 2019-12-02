@@ -258,12 +258,44 @@ func randCity() city {
 const numItems = 20
 
 func main() {
+	fmt.Println("---- PEOPLE ----")
 	for i := 0; i < numItems; i++ {
 		fName := randString(seededRand.Intn(12) + 2)
 		lName := randString(seededRand.Intn(12) + 2)
 		state := randState()
 		city := randCity()
 		fmt.Printf("('%s', '%s', '%s', '%s')", fName, lName, state, city.name)
+		if i != numItems-1 {
+			fmt.Print(",")
+		}
+		fmt.Print("\n")
+	}
+	fmt.Println("---- ITEMS ----")
+	for i := 0; i < numItems; i++ {
+		item := randString(seededRand.Intn(12) + 2)
+		fmt.Printf("('%s')", item)
+		if i != numItems-1 {
+			fmt.Print(",")
+		}
+		fmt.Print("\n")
+	}
+	fmt.Println("---- LISTS ----")
+	for i := 0; i < numItems; i++ {
+		num := seededRand.Intn(numItems)+1
+		lname := randString(seededRand.Intn(12) + 2)
+		fmt.Printf("(%d, '%s')", num, lname)
+		if i != numItems-1 {
+			fmt.Print(",")
+		}
+		fmt.Print("\n")
+	}
+	fmt.Println("---- LISTITEMS ----")
+	for i := 0; i < numItems; i++ {
+		lID := seededRand.Intn(numItems)+1
+		iID := seededRand.Intn(numItems)+1
+		ipurchased := seededRand.Intn(10) + 1
+		idesired := seededRand.Intn(10) + ipurchased
+		fmt.Printf("(%d, %d, %d, %d)", lID, iID, idesired, ipurchased)
 		if i != numItems-1 {
 			fmt.Print(",")
 		}
