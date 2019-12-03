@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"strings"
 	"time"
 )
@@ -255,50 +256,56 @@ func randCity() city {
 	return cities[seededRand.Intn(len(cities))]
 }
 
-const numItems = 20
+const numItems = 1000000
 
 func main() {
-	fmt.Println("---- PEOPLE ----")
+	f, err := os.Create("database.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	fmt.Fprintln(f, "---- PEOPLE ----")
 	for i := 0; i < numItems; i++ {
 		fName := randString(seededRand.Intn(12) + 2)
 		lName := randString(seededRand.Intn(12) + 2)
 		state := randState()
 		city := randCity()
-		fmt.Printf("('%s', '%s', '%s', '%s')", fName, lName, state, city.name)
+		fmt.Fprintf(f, "('%s', '%s', '%s', '%s')", fName, lName, state, city.name)
 		if i != numItems-1 {
-			fmt.Print(",")
+			fmt.Fprint(f, ",")
 		}
-		fmt.Print("\n")
+		fmt.Fprint(f, "\n")
 	}
-	fmt.Println("---- ITEMS ----")
+	fmt.Fprintln(f, "---- ITEMS ----")
 	for i := 0; i < numItems; i++ {
 		item := randString(seededRand.Intn(12) + 2)
-		fmt.Printf("('%s')", item)
+		fmt.Fprintf(f, "('%s')", item)
 		if i != numItems-1 {
-			fmt.Print(",")
+			fmt.Fprint(f, ",")
 		}
-		fmt.Print("\n")
+		fmt.Fprint(f, "\n")
 	}
-	fmt.Println("---- LISTS ----")
+	fmt.Fprintln(f, "---- LISTS ----")
 	for i := 0; i < numItems; i++ {
-		num := seededRand.Intn(numItems)+1
+		num := seededRand.Intn(numItems) + 1
 		lname := randString(seededRand.Intn(12) + 2)
-		fmt.Printf("(%d, '%s')", num, lname)
+		fmt.Fprintf(f, "(%d, '%s')", num, lname)
 		if i != numItems-1 {
-			fmt.Print(",")
+			fmt.Fprint(f, ",")
 		}
-		fmt.Print("\n")
+		fmt.Fprint(f, "\n")
 	}
-	fmt.Println("---- LISTITEMS ----")
+	fmt.Fprintln(f, "---- LISTITEMS ----")
 	for i := 0; i < numItems; i++ {
-		lID := seededRand.Intn(numItems)+1
-		iID := seededRand.Intn(numItems)+1
+		lID := seededRand.Intn(numItems) + 1
+		iID := seededRand.Intn(numItems) + 1
 		ipurchased := seededRand.Intn(10) + 1
 		idesired := seededRand.Intn(10) + ipurchased
-		fmt.Printf("(%d, %d, %d, %d)", lID, iID, idesired, ipurchased)
+		fmt.Fprintf(f, "(%d, %d, %d, %d)", lID, iID, idesired, ipurchased)
 		if i != numItems-1 {
-			fmt.Print(",")
+			fmt.Fprint(f, ",")
 		}
-		fmt.Print("\n")
+		fmt.Fprint(f, "\n")
 	}
 }
