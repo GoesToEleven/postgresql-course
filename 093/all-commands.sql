@@ -1,9 +1,9 @@
 -- CREATE DATABASE wishlists;
 
--- DROP TABLE listitems;
--- DROP TABLE items;
--- DROP TABLE lists;
--- DROP TABLE people;
+DROP TABLE IF EXISTS listitems;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS lists;
+DROP TABLE IF EXISTS people;
 
 CREATE TABLE people
 ( pid SERIAL PRIMARY KEY,
