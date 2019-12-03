@@ -256,7 +256,7 @@ func randCity() city {
 	return cities[seededRand.Intn(len(cities))]
 }
 
-const numItems = 1000000
+const numItems = 1000
 
 func main() {
 	f, err := os.Create("database.txt")
