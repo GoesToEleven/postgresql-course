@@ -34,4 +34,4 @@
 -- SELECT * FROM employees CROSS JOIN department;
 
 -- FULL JOIN multiple TABLES
-SELECT customers.cname, movies.mname FROM (customers JOIN rentals USING (cid)) JOIN movies USING (mid);
+-- SELECT customers.cname, movies.mname FROM (customers JOIN rentals USING (cid)) JOIN movies USING (mid);

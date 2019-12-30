@@ -70,6 +70,7 @@ INSERT INTO people (pfirstname, plastname, pstate, pcity, pdob, pjoined, plastvi
 ('Qys', 'Omxnswbr', 'NY', 'Winston-Salem', '1988-05-09 16:39:10', '2019-12-03 16:39:10', '2019-12-03 16:39:10', 4886, '{"Desserts":["yumLngu","yumPvfgbr","yumOh","ice cream"],"Destinations":["locQnlh","locYu","locXwbm","Canada"]}'),
 ('Hbayjcp', 'Kxnvyssmspk', 'NH', 'Kansas City', '1974-02-13 16:39:10', '2019-12-03 16:39:10', '2019-12-03 16:39:10', 170, '{"Desserts":["yumYgmatxp","yumVjrfgwd","yumJi","cookie"],"Destinations":["locClpzftt","locFaqul","locVe","China"]}'),
 ('Rzpszwbdk', 'Vwreztxyan', 'PR', 'Philadelphia', '2013-01-09 16:39:10', '2019-12-03 16:39:10', '2019-12-03 16:39:10', 5958, '{"Desserts":["yumYkkftjn","yumOip","yumSqgu","blueberries"],"Destinations":["locZxace","locWvqwmir","locMi","Hawaii"]}'),
+
 ('Rpthnbb', 'Cdgymid', 'VI', 'Spokane', '1943-10-08 16:39:10', '1995-09-25 16:39:10', '2019-12-03 16:39:10', 3693, '{"Desserts":["yumUyuid","yumIzie","yumDhripdt","ice cream"],"Destinations":["locCrezjdt","locXtalgpj","locWfnluu","Thailand"]}'),
 ('Vfdxpwelaot', 'Fghlqf', 'CA', 'Chesapeake', '2006-07-12 16:39:10', '2019-12-03 16:39:10', '2019-12-03 16:39:10', 943, '{"Desserts":["yumDlo","yumLtuamkk","yumKjgp","cake"],"Destinations":["locTmzch","locLyxi","locBmojj","Hawaii"]}'),
 ('Ytjjxoeqzxqwa', 'Plarflsvg', 'NY', 'Cincinnati', '1928-03-25 16:39:10', '1972-01-09 16:39:10', '2019-12-03 16:39:10', 1098, '{"Desserts":["yumNfklkhf","yumEsjjunn","yumUbxf","cookie"],"Destinations":["locAmyotlt","locTzjmf","locRxak","Spain"]}'),

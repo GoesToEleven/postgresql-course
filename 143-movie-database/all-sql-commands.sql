@@ -41,7 +41,9 @@ INSERT INTO customers (cname) VALUES
 ('Q'),
 ('M'),
 ('Ian'),
-('Fleming');
+('Fleming'),
+('Bruce'),
+('Tyler');
 
 INSERT INTO movies (mname) VALUES 
 ('Ex Machina'),
@@ -49,7 +51,9 @@ INSERT INTO movies (mname) VALUES
 ('The Lives of Others'),
 ('Intouchables'),
 ('Limitless'),
-('Kumare');
+('Kumare'),
+('The Fog of War'),
+('Forks Over Knives');
 
 INSERT INTO rentals (cid, mid) VALUES 
 (2,3), 
