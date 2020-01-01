@@ -1,3 +1,5 @@
+SELECT customers.cname, (SELECT COUNT(*) FROM rentals WHERE customers.cid=rentals.cid) AS "# Rentals" FROM customers;
+
 -- HANDS ON EXERCISES
 SELECT customers.cname, COUNT(*) AS "number of rentals" 
 FROM customers 

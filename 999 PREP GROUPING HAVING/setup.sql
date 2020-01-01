@@ -1,3 +1,5 @@
+SELECT people.pid, people.pfirstname FROM people WHERE people.pid > (SELECT AVG(people.pid) FROM people);
+
 -- SELECT people.pcity, COUNT(*) AS "people per city" from people GROUP BY people.pcity;
 -- SELECT people.pcity, COUNT(*) AS "people per city" from people GROUP BY people.pcity ORDER BY "people per city" DESC;
 
@@ -27,4 +29,4 @@
 -- HANDS ON EXERCISES
 -- SELECT * FROM people;
 
-SELECT people.pfirstname, people.plastname, COUNT()
+
