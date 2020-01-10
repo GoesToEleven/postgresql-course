@@ -1,55 +1,55 @@
-SELECT cid, cname, mname 
-    FROM customers NATURAL FULL JOIN rentals
-    NATURAL FULL JOIN movies
-    ORDER BY mname;
+-- SELECT cid, cname, mname 
+--     FROM customers NATURAL FULL JOIN rentals
+--     NATURAL FULL JOIN movies
+--     ORDER BY mname;
 
-UPDATE customers 
-    SET cname = cname || '+HERO'
-    -- SET cname = CONCAT(cname,'+HERO')
-    WHERE cid IN (1);
+-- UPDATE customers 
+--     SET cname = cname || '+HERO'
+--     -- SET cname = CONCAT(cname,'+HERO')
+--     WHERE cid IN (1);
 
-SELECT cid, cname, mname 
-    FROM customers NATURAL FULL JOIN rentals
-    NATURAL FULL JOIN movies
-    ORDER BY mname;
+-- SELECT cid, cname, mname 
+--     FROM customers NATURAL FULL JOIN rentals
+--     NATURAL FULL JOIN movies
+--     ORDER BY mname;
 
-UPDATE customers 
-    SET cname = 'James'
-    WHERE cid IN (1);
+-- UPDATE customers 
+--     SET cname = 'James'
+--     WHERE cid IN (1);
 
-SELECT cid, cname, mname 
-    FROM customers NATURAL FULL JOIN rentals
-    NATURAL FULL JOIN movies
-    ORDER BY mname;
+-- SELECT cid, cname, mname 
+--     FROM customers NATURAL FULL JOIN rentals
+--     NATURAL FULL JOIN movies
+--     ORDER BY mname;
 
-METHOD #1 - SUBQUERY
-UPDATE customers 
-    SET cname = CONCAT(cname,'+HERO')
-    WHERE customers.cid IN (SELECT rentals.cid 
-        FROM rentals NATURAL FULL JOIN movies
-        WHERE customers.cid = rentals.cid
-        AND movies.mname = 'The Lives of Others');
+-- -- METHOD #1 - SUBQUERY
+-- UPDATE customers 
+--     SET cname = CONCAT(cname,'+HERO')
+--     WHERE customers.cid IN (SELECT rentals.cid 
+--         FROM rentals NATURAL FULL JOIN movies
+--         WHERE customers.cid = rentals.cid
+--         AND movies.mname = 'The Lives of Others');
     
-METHOD #2 - FROM
-UPDATE customers
-    SET cname = CONCAT(cname,'+HERO')
-    FROM rentals, movies
-    WHERE customers.cid = rentals.cid
-        AND rentals.mid = movies.mid
-        AND movies.mname = 'The Lives of Others';
+-- -- METHOD #2 - FROM
+-- UPDATE customers
+--     SET cname = CONCAT(cname,'+HERO')
+--     FROM rentals, movies
+--     WHERE customers.cid = rentals.cid
+--         AND rentals.mid = movies.mid
+--         AND movies.mname = 'The Lives of Others';
 
-METHOD #3 - FROM
-UPDATE customers
-    SET cname = CONCAT(customers.cname,'+HERO')
-    FROM customers AS c NATURAL JOIN rentals NATURAL JOIN movies
-    WHERE customers.cid = c.cid 
-    AND movies.mname = 'The Lives of Others' 
-    RETURNING *;    
+-- -- METHOD #3 - FROM
+-- UPDATE customers
+--     SET cname = CONCAT(customers.cname,'+HERO')
+--     FROM customers AS c NATURAL JOIN rentals NATURAL JOIN movies
+--     WHERE customers.cid = c.cid 
+--     AND movies.mname = 'The Lives of Others' 
+--     RETURNING *;    
 
-SELECT cid, cname, mname 
-    FROM customers NATURAL FULL JOIN rentals
-    NATURAL FULL JOIN movies
-    ORDER BY mname;
+-- SELECT cid, cname, mname 
+--     FROM customers NATURAL FULL JOIN rentals
+--     NATURAL FULL JOIN movies
+--     ORDER BY mname;
 
 -- REBUILD DATABASE
 
