@@ -12,10 +12,12 @@ ALTER TABLE department
 -- DELETE
 
 SELECT cid, cname FROM customers;
+SELECT rid, cid FROM rentals;
 
 DELETE FROM customers WHERE cid < 5;
 
 SELECT cid, cname FROM customers;
+SELECT rid, cid FROM rentals;
 
 -- REBUILD DATABASE
 
